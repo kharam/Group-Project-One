@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <title>Document</title>
+</head>
+<body>
+    <!--Navbar-->
+    <div class="w3-bar w3-aqua">
+        <div class="w3-container">
+            <!-- main title -->
+            <h2>Whatever this thing is called...</h2>
+        </div>
+    </div>
+    <br>
+    <!--two search bars and the submit button-->
+    <div class="w3-container" style="text-align: center;">
+        <div class="w3-dropdown-hover">
+            <!-- search bar -->
+            <input type="w3-search" placeholder="Search City 1" id="searchCityOne">
+            <!-- dropdown div to put history items -->
+            <div class="w3-dropdown-content w3-bar-block w3-border">
+                <!--style dropdown buttons like this <button class="w3-button w3-round-large w3-hover-aqua" style="width: 100%;"></button> -->
+            </div>
+        </div>
+        <div class="w3-dropdown-hover">
+            <input type="w3-search" placeholder="Search City 2" id="searchCityTwo">
+            <div class="w3-dropdown-content w3-bar-block w3-border">
+                <!-- <button class="w3-button w3-round-large w3-hover-aqua" style="width: 100%;"></button> -->
+            </div>
+        </div>
+        <br>
+        <br>
+        <!-- search button for city 1 & 2 -->
+        <button class="w3-button w3-hover-aqua w3-border">Search</button>
+    </div>
+    <br>
+    <!-- div containing map and expenses -->
+    <div class="w3-container w3-cell-row">
+        <div class="w3-card w3-cell w3-half w3-mobile">
+            <header class="w3-container w3-blue-gray">
+                <h1>Distance Between Cities</h1>
+            </header>
+            <!-- put map in div below -->
+            <div class="w3-container w3-aqua"></div>
+        </div>
+        <!-- contains cost of living -->
+        <div class="w3-card w3-cell w3-half w3-mobile">
+            <header class="w3-container w3-blue-gray">
+                <h1>Cost of Living</h1>
+            </header>
+            <div class="w3-container w3-aqua">
+                <!-- cost of living city 1 -->
+                <div class="w3-half"></div>
+                <!-- cost of living city 2 -->
+                <div class="w3-half"></div>
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+    <!-- contains forcast -->
+    <div class="w3-container w3-cell-row">
+        <div class="w3-card w3-mobile">
+            <header class="w3-container w3-blue-gray">
+                <h1>Forecast</h1>
+            </header>
+            <!-- 5 day city 1 -->
+            <div class="w3-container w3-aqua w3-cell-row" id="forecastOne"></div>
+            <!-- five day city 2 -->
+            <div class="w3-container w3-red w3-cell-row" id="forecastTwo"></div>
+        </div>
+    </div>
+    <br>
+    <br>
+    <br>
+</body>
+</html>
