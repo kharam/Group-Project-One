@@ -7,3 +7,13 @@
         color: black;
         padding: 10px;
 }
+
+#forecastOne {
+        display: flex;
+        justify-content: space-evenly;
+}
+
+#forecastTwo {
+        display: flex;
+        justify-content: space-evenly;
+}
