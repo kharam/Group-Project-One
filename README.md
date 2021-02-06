@@ -1,3 +1,13 @@
 # Group-Project-One
 
-I enjoy JavaScript because it utilizes both Functional programming and Object-oriented programming.
+## Project Description
+
+## Process
+
+## Project Link
+
+## Screenshots
+
+## Credits
+
+W3 CSS Framework (https://www.w3schools.com/w3css/)
