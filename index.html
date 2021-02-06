@@ -55,7 +55,26 @@
             </header>
             <!-- put map in div below -->
             <div class="w3-container w3-aqua" id="mapid"></div>
+
+
+
+
+            <!-- function scripts go here -->   
+            
+            <script src="Assets/js/SearchStore.js"></script>
+            <script src="Assets/js/openWeatherAPI.js"></script>
+
+            <!-- main code to bring it all together goes here -->
+            <script src="Assets/js/script.js"></script>
+
+
+
             <script>
+
+
+
+
+
                 var lat;
                 var long;
                 function getLatAndLong(city) {
@@ -90,8 +109,17 @@
                     $("#search-btn").click(function() {
                         getLatAndLong($("#searchCityOne").val());
                         //getLatAndLong($("#searchCityTwo").val());
+                        StoreageRefresh()
                     });
                 });
+
+
+
+
+
+
+                //storage code !!do not remove
+                StoreageRefresh()
             </script>
         </div>
         <!-- contains cost of living -->
@@ -138,13 +166,6 @@
     </div>
     <br>
 
-    <!-- function scripts go here -->   
-    
-    <script src="Assets/js/SearchStore.js"></script>
-    <script src="Assets/js/openWeatherAPI.js"></script>
-
-    <!-- main code to bring it all together goes here -->
-    <script src="Assets/js/script.js"></script>
 
 
 
