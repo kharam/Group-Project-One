@@ -1,20 +1,16 @@
 function getFiveDay() {
     let searchCityOne = $("#searchCityOne").val()
-    console.log(searchCityOne)
     let searchCityTwo = $("#searchCityTwo").val()
     let forecastOne = $("#forecastOne")
-    console.log(forecastOne)
     let forecastTwo = $("#forecastTwo")
     let sourceArray = [searchCityOne, searchCityTwo]
     let weatherTargetingArray = [forecastOne, forecastTwo]
     console.log(weatherTargetingArray)
-    let loop = 0
-
-    //sets the city name in forecast div
-    
+    let loop = 0 
 
     //Clears 5 day forecast divs
     clearWeather();
+    printHeaders()
 
     //Gets API data
     function getForecastData(city) {
@@ -65,4 +61,10 @@ function getFiveDay() {
 function clearWeather() {
     $("#forecastOne").html("");
     $("#forecastTwo").html("");
+}
+
+function printHeaders(){
+    console.log(searchCityOne)
+    $("#cityNameHeaderOne").text($("#searchCityOne").val())
+    $("#cityNameHeaderTwo").text($("#searchCityTwo").val())
 }

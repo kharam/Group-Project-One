@@ -6,9 +6,9 @@ $("#search-btn").click(function(){
     LoadItem("cityOne")
     getFiveDay()
     
-    var cityOneName = $("#searchCityOne").val()
-    var cityTwoName = $("#searchCityTwo").val()
+    // var cityOneName = $("#searchCityOne").val()
+    // var cityTwoName = $("#searchCityTwo").val()
 
-    $(".cityNameOne").append(cityOneName);
-    $(".cityNameTwo").append(cityTwoName);
+    // $(".cityNameOne").append(cityOneName);
+    // $(".cityNameTwo").append(cityTwoName);
 })
