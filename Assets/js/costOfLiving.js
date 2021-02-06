@@ -1,5 +1,7 @@
 "use strict";
 
+const costOfLivingTable = document.getElementById("cost-of-living-table");
+
 const baseURL = "https://www.numbeo.com/api/city_prices";
 const apiKey = "12umxiuvoeo7hs";
 const city = "seattle";
@@ -119,23 +121,67 @@ async function findCommonKeys(city1, city2) {
 }
 
 async function searchCities(city1, city2) {
-  function drawOnTable() {
-    console.log("draw");
+  function drawOnTable(city1, city2, commonKeys) {
+    function _makeTR(number, itemName, price1, price2) {
+      const tr = document.createElement("tr");
+      tr.innerHTML = `
+        <th scope="row">${number}</th>
+        <td>${itemName}</td>
+        <td>$ ${price1}</td>
+        <td>$ ${price2}</td>
+      `;
+
+      return tr;
+    }
+
+    function _makeTBODY(city1, city2, commonKeys) {
+      const tbody = document.createElement("tbody");
+
+      commonKeys.forEach((key, index) => {
+        const itemName = city1.get("priceMap").get(key).name;
+        const price1 = city1.get("priceMap").get(key).averagePrice;
+        const price2 = city2.get("priceMap").get(key).averagePrice;
+        tbody.appendChild(_makeTR(index, itemName, price1, price2));
+      });
+
+      return tbody;
+    }
+
+    const cityName1 = city1.get("cityName");
+    const cityName2 = city2.get("cityName");
+
+    const tbody = _makeTBODY(city1, city2, commonKeys);
+
+    costOfLivingTable.innerHTML = `
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Item Name</th>
+          <th scope="col">${cityName1}</th>
+          <th scope="col">${cityName2}</th>
+        </tr>
+      </thead>
+      `;
+
+    costOfLivingTable.appendChild(tbody);
   }
 
   const cityPrice1 = await getCityPrices(city1);
   const cityPrice2 = await getCityPrices(city2);
   const commonCityKey = await findCommonKeys(cityPrice1, cityPrice2);
 
-  console.log(commonCityKey);
+  // console.log(commonCityKey);
   console.log(cityPrice1);
 
   commonCityKey.forEach((key) => {
     const itemName = cityPrice1.get("priceMap").get(key).name;
     const itemAveragePrice1 = cityPrice1.get("priceMap").get(key).averagePrice;
     const itemAveragePrice2 = cityPrice2.get("priceMap").get(key).averagePrice;
-    console.log(`${itemName}: ${itemAveragePrice1} ||| ${itemAveragePrice2}`);
+    // console.log(`${itemName}: ${itemAveragePrice1} ||| ${itemAveragePrice2}`);
   });
+
+  drawOnTable(cityPrice1, cityPrice2, commonCityKey);
 
   return {
     cityPrice1: cityPrice1,
