@@ -21,7 +21,7 @@ function getFiveDay() {
                 return response.json();
             })
             .then(function (data) {
-                console.log(data)
+                //console.log(data)
                 var numberOfDays = 5
                 var index = 0
                 for (var i = 0; i < numberOfDays; i++) {
@@ -32,7 +32,7 @@ function getFiveDay() {
                         <p>Temp: ${data.list[index].main.temp} ºF</p>
                         <p>Humidity: ${data.list[index].main.humidity}%</p>
                     </div>`)
-                    weatherTargetingArray[loop].append(forecastCard)
+                    $(weatherTargetingArray[i]).append(forecastCard)
                     index += 8
                 }
             })

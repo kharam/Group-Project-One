@@ -7,3 +7,8 @@
         color: black;
         padding: 10px;
 }
+
+#mapid {
+        height: 360px;
+        width: 500px;
+}
