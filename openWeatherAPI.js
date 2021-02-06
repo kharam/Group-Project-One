@@ -10,6 +10,10 @@ function getFiveDay() {
     console.log(weatherTargetingArray)
     let loop = 0
 
+    //Clears 5 day forecast divs
+    clearWeather();
+
+    //Gets API data
     function getForecastData(city) {
         return fetch("https://api.openweathermap.org/data/2.5/forecast?q=" + city + "&units=imperial&apikey=09a0aab280840ec6d582b6d7445e4771")
             .then(res => {
@@ -18,11 +22,13 @@ function getFiveDay() {
             })
     }
 
+    //Puts source array data into promise
     const fetchCallPromises = []
     for (var k = 0; k < sourceArray.length; k++) {
         fetchCallPromises.push(getForecastData(sourceArray[k]))
     }
 
+    //Promise to loop through the data and add the cards before moving onto other actions
     console.log(fetchCallPromises)
     Promise.all(fetchCallPromises)
         .then((data) => {
@@ -49,4 +55,10 @@ function getFiveDay() {
         .catch((err) => {
             console.log('err:', err)
         })
+}
+
+//clear weather data function
+function clearWeather() {
+    $("#forecastOne").html("");
+    $("#forecastTwo").html("");
 }
