@@ -10,6 +10,9 @@ function getFiveDay() {
     console.log(weatherTargetingArray)
     let loop = 0
 
+    //sets the city name in forecast div
+    
+
     //Clears 5 day forecast divs
     clearWeather();
 
@@ -42,6 +45,7 @@ function getFiveDay() {
                     <div class="w3-card w3-mobile forecastCard">
                         <p>${dayjs(data[i].list[index].dt_txt).format('M/D/YYYY')}</p>
                         <img src="http://openweathermap.org/img/wn/${data[i].list[index].weather[0].icon}@2x.png" class="iconImage">
+                        <hr>
                         <p>Temp: ${data[i].list[index].main.temp} ºF</p>
                         <p>Humidity: ${data[i].list[index].main.humidity}%</p>
                     </div>`

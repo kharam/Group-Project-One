@@ -1,3 +1,4 @@
+
 //event listener for both search boxes
 $("#search-btn").click(function(){
     StoreItem("cityOne", $("#searchCityOne").val())
@@ -5,5 +6,9 @@ $("#search-btn").click(function(){
     LoadItem("cityOne")
     getFiveDay()
     
-    console.log("it works i promise")
+    var cityOneName = $("#searchCityOne").val()
+    var cityTwoName = $("#searchCityTwo").val()
+
+    $(".cityNameOne").append(cityOneName);
+    $(".cityNameTwo").append(cityTwoName);
 })
