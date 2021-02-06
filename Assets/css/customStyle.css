@@ -18,11 +18,13 @@
         display: flex;
         justify-content: space-evenly;
 }
-.bobbyshmurda{
-        text-align: center;
-}
+
 
 #mapid {
         height: 400px;
-        width: 600px;
+        width: auto;
+}
+
+#forecastHeader{
+        margin-top: 20px;
 }
