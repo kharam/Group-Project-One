@@ -21,3 +21,8 @@
 .bobbyshmurda{
         text-align: center;
 }
+
+#mapid {
+        height: 400px;
+        width: 600px;
+}
