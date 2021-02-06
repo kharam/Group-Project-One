@@ -10,9 +10,7 @@
     <link rel="stylesheet" href="./customStyle.css">
     <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
-    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
-   integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
-   crossorigin=""></script>
+    <link rel="stylesheet" href="Assets/css/customStyle.css">
     <title>Document</title>
 </head>
 <body>
@@ -115,9 +113,15 @@
                 <h1>Forecast</h1>
             </header>
             <!-- 5 day city 1 -->
-            <div class="w3-container w3-aqua w3-cell-row" id="forecastOne"></div>
+            <div class="w3-container w3-aqua" id="bobbyshmurda">
+                <h1 class="cityNameOne" ></h1>
+                <div id="forecastOne"></div>
+            </div>
             <!-- five day city 2 -->
-            <div class="w3-container w3-red w3-cell-row" id="forecastTwo"></div>
+            <div class="w3-container w3-red" id="bobbyshmurda">
+                <h1 class="cityNameTwo"></h1>
+                <div id="forecastTwo"></div>
+            </div>
         </div>
     </div>
     <br>
@@ -133,11 +137,11 @@
 
     <!-- function scripts go here -->   
     
-    <script src="SearchStore.js"></script>
-    <script src="openWeatherAPI.js"></script>
+    <script src="Assets/js/SearchStore.js"></script>
+    <script src="Assets/js/openWeatherAPI.js"></script>
 
     <!-- main code to bring it all together goes here -->
-    <script src="script.js"></script>
+    <script src="Assets/js/script.js"></script>
 
 
 

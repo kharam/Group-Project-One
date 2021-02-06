@@ -1,0 +1,23 @@
+/* This is the class for the five day forecast cards that appear in the Open Weather API function. */
+.forecastCard {
+        min-width: 150px;
+        width: 10vw;
+        color: black;
+        background-color: white;
+        padding: 10px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+}
+
+#forecastOne {
+        display: flex;
+        justify-content: space-evenly;
+}
+
+#forecastTwo {
+        display: flex;
+        justify-content: space-evenly;
+}
+.bobbyshmurda{
+        text-align: center;
+}
