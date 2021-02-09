@@ -32,12 +32,12 @@ function getFiveDay() {
                 var index = 0
                 for (var j = 0; j < numberOfDays; j++) {
                     var forecastCard = `
-                    <div class="w3-card w3-mobile forecastCard">
-                        <p>${dayjs(data[i].list[index].dt_txt).format('M/D/YYYY')}</p>
-                        <img src="http://openweathermap.org/img/wn/${data[i].list[index].weather[0].icon}@2x.png" class="iconImage">
-                        <hr>
-                        <p>Temp: ${data[i].list[index].main.temp} ºF</p>
-                        <p>Humidity: ${data[i].list[index].main.humidity}%</p>
+                    <div class="w3-card w3-col forecastCard">
+                            <p>${dayjs(data[i].list[index].dt_txt).format('M/D/YYYY')}</p>
+                            <img src="http://openweathermap.org/img/wn/${data[i].list[index].weather[0].icon}@2x.png" class="iconImage">
+                            <hr>
+                            <p>Temp: ${data[i].list[index].main.temp} ºF</p>
+                            <p>Humidity: ${data[i].list[index].main.humidity}%</p>
                     </div>`
                     $(weatherTargetingArray[i]).append(forecastCard)
                     index += 8
