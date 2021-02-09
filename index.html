@@ -10,15 +10,15 @@
     <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="Assets/css/customStyle.css">
-    
-    <title>Document</title>
+    <title>The Relocator</title>
 </head>
 <body>
     <!--Navbar-->
     <div class="w3-bar w3-aqua">
         <div class="w3-container">
             <!-- main title -->
-            <h2>Whatever this thing is called...</h2>
+            <h1 style="text-align: center; margin: 5px; padding: 0px;">The Relocator</h1>
+            <p style="text-align: center; margin: 5px; padding: 0px;">Search two cities and find your forever home!</p>
         </div>
     </div>
     <br>
@@ -52,7 +52,7 @@
                     <h1>Location</h1>
                 </header>
                 <!-- put map in div below -->
-                <div class="w3-container w3-aqua" id="mapid"></div>
+                <div class="w3-container w3-white" id="mapid"></div>
                 <script>
                     var lat;
                     var long;
@@ -83,7 +83,6 @@
                         alert('Unable to connect to the API.');
                         });
                     }
-
                     $(document).ready(function() {
                         $("#search-btn").click(function() {
                             getLatAndLong($("#searchCityOne").val());
@@ -97,7 +96,7 @@
                 <header class="w3-container w3-blue-gray">
                     <h1>Cost of Living</h1>
                 </header>
-                <div class="w3-container w3-aqua">
+                <div class="w3-container w3-white">
                     <!-- cost of living city 1 -->
                     <div class="w3-half"></div>
                     <!-- cost of living city 2 -->
@@ -105,14 +104,13 @@
                 </div>
             </div>
         </div>
-
         <div class="w3-container w3-half ">
             <div class="w3-card w3-cell w3-half w3-mobile">
                 <header class="w3-container w3-blue-gray">
                     <h1>Location</h1>
                 </header>
                 <!-- put map in div below -->
-                <div class="w3-container w3-aqua" id="mapidTwo"></div>
+                <div class="w3-container w3-white" id="mapid"></div>
                 <script>
                     var lat;
                     var long;
@@ -143,7 +141,6 @@
                         console.log('Unable to connect to the API.');
                         });
                     }
-
                     $(document).ready(function() {
                         $("#search-btn").click(function() {
                             getLatAndLong($("#searchCityOne").val());
@@ -152,37 +149,43 @@
                     });
                 </script>
             </div>
-        <!-- contains cost of living -->
-        <div class="w3-card w3-cell w3-half w3-mobile">
-            <header class="w3-container w3-blue-gray">
-                <h1>Cost of Living</h1>
-            </header>
-            <div class="w3-container w3-aqua">
-                <!-- cost of living city 1 -->
-                <div class="w3-half"></div>
-                <!-- cost of living city 2 -->
-                <div class="w3-half"></div>
+        
+            <!-- contains cost of living -->
+            <div class="w3-card w3-cell w3-half w3-mobile">
+                <header class="w3-container w3-blue-gray">
+                    <h1>Cost of Living</h1>
+                </header>
+                <div class="w3-container w3-white">
+                    <!-- cost of living city 1 -->
+                    <div class="w3-half"></div>
+                    <!-- cost of living city 2 -->
+                    <div class="w3-half"></div>
+                </div>
             </div>
         </div>
     </div>
     <br>
     <br>
     <!-- contains forcast -->
-    <div class="w3-container w3-cell-row">
-        <div class="w3-card w3-mobile">
+    <div class="w3-container w3-row w3-mobile test">
+        <div class="w3-card">
             <header class="w3-container w3-blue-gray" id="forecastHeader">
                 <h1>Forecast</h1>
             </header>
             <!-- 5 day city 1 -->
-            <div class="w3-container">
-                <h1 id="cityNameHeaderOne"></h1>
-                <div id="forecastOne"></div>
-            </div>
-            <!-- five day city 2 -->
-            <div class="w3-container">
-                <h1 id="cityNameHeaderTwo"></h1>
-                <div id="forecastTwo"></div>
-            </div>
+            
+                <div class="w3-container">
+                    <h1 id="cityNameHeaderOne"></h1>
+                    <div class="w3-row w3-mobile" id="forecastOne"></div>
+                </div>
+            
+            
+                <!-- five day city 2 -->
+                <div class="w3-container">
+                    <h1 id="cityNameHeaderTwo"></h1>
+                    <div class="w3-row w3-mobile" id="forecastTwo"></div>
+                </div>
+            
         </div>
     </div>
     <br>
@@ -198,7 +201,6 @@
     <script src="Assets/js/openWeatherAPI.js"></script>
     <script src="Assets/js/script.js"></script>
     <script src="Assets/js/SearchStore.js"></script>
-
 
 </body>
 </html>
