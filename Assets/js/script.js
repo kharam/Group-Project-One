@@ -2,9 +2,12 @@
 //event listener for both search boxes
 $("#search-btn").click(function(){
     StoreItem("cityOne", $("#searchCityOne").val())
+    console.log($("#searchCityOne").val())
     StoreItem("cityTwo", $("#searchCityTwo").val())
     LoadItem("cityOne")
+    errorModal()
     getFiveDay()
+    
     
     // var cityOneName = $("#searchCityOne").val()
     // var cityTwoName = $("#searchCityTwo").val()
