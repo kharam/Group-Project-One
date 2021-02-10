@@ -56,7 +56,7 @@
                 <script>
                     var lat;
                     var long;
-                    function getLatAndLong(city) {
+                    function getLatAndLong(city, theId) {
                         var apiUrl = "https://api.openweathermap.org/data/2.5/weather?q=" + city +"&appid=873f7dda26b104045b059e355834d85b";
                         fetch(apiUrl)
                             .then(function (response) {
@@ -65,7 +65,7 @@
                                 .then(function (data) {
                                     lat = data.coord.lat;
                                     long = data.coord.lon;
-                                    var mymap = L.map('mapid').setView([lat, long], 13);
+                                    var mymap = L.map(theId).setView([lat, long], 13);
                                     L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoiaGFuY29uZyIsImEiOiJja2tveGoxMXgwMXloMnNxa2oybm5pc25sIn0.hp-Jq2bPDmlRSluu-dXp-g', {
                                         attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
                                         maxZoom: 18,
@@ -85,8 +85,8 @@
                     }
                     $(document).ready(function() {
                         $("#search-btn").click(function() {
-                            getLatAndLong($("#searchCityOne").val());
-                            //getLatAndLong($("#searchCityTwo").val());
+                            getLatAndLong($("#searchCityOne").val(), "mapid");
+                            getLatAndLong($("#searchCityTwo").val(), "mapid2");
                         });
                     });
                 </script>
@@ -98,9 +98,7 @@
                 </header>
                 <div class="w3-container w3-white">
                     <!-- cost of living city 1 -->
-                    <div class="w3-half"></div>
-                    <!-- cost of living city 2 -->
-                    <div class="w3-half"></div>
+                    <div id="cost-table-1"  class="w3-half"></div>
                 </div>
             </div>
         </div>
@@ -110,44 +108,7 @@
                     <h1>Location</h1>
                 </header>
                 <!-- put map in div below -->
-                <div class="w3-container w3-white" id="mapid"></div>
-                <script>
-                    var lat;
-                    var long;
-                    function getLatAndLong(city) {
-                        var apiUrl = "https://api.openweathermap.org/data/2.5/weather?q=" + city +"&appid=873f7dda26b104045b059e355834d85b";
-                        fetch(apiUrl)
-                            .then(function (response) {
-                            if (response.ok) {
-                                response.json()
-                                .then(function (data) {
-                                    lat = data.coord.lat;
-                                    long = data.coord.lon;
-                                    var mymap = L.map('mapid').setView([lat, long], 13);
-                                    L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoiaGFuY29uZyIsImEiOiJja2tveGoxMXgwMXloMnNxa2oybm5pc25sIn0.hp-Jq2bPDmlRSluu-dXp-g', {
-                                        attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-                                        maxZoom: 18,
-                                        id: 'mapbox/streets-v11',
-                                        tileSize: 512,
-                                        zoomOffset: -1,
-                                        accessToken: 'your.mapbox.access.token'
-                                    }).addTo(mymap);
-                                });
-                            } else {
-                                console.log('Error: ' + response.statusText);
-                            }
-                            })
-                        .catch(function (error) {
-                        console.log('Unable to connect to the API.');
-                        });
-                    }
-                    $(document).ready(function() {
-                        $("#search-btn").click(function() {
-                            getLatAndLong($("#searchCityOne").val());
-                            //getLatAndLong($("#searchCityTwo").val());
-                        });
-                    });
-                </script>
+                <div class="w3-container w3-white" id="mapid2"></div>
             </div>
         
             <!-- contains cost of living -->
@@ -156,10 +117,8 @@
                     <h1>Cost of Living</h1>
                 </header>
                 <div class="w3-container w3-white">
-                    <!-- cost of living city 1 -->
-                    <div class="w3-half"></div>
                     <!-- cost of living city 2 -->
-                    <div class="w3-half"></div>
+                    <div id="cost-table-2" class="w3-half"></div>
                 </div>
             </div>
         </div>
