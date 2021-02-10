@@ -14,7 +14,7 @@
                 rend.attr("value1", value1)
                 }
                 if(value2 !== null){
-                        rend.attr("value2", value2)
+                rend.attr("value2", value2)
                 }
             return rend
         }
@@ -37,7 +37,7 @@
 
 
 
-        function RenderDropdown(CityStorage,target){
+
 
 
                 

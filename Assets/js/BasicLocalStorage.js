@@ -8,7 +8,6 @@ function LoadItem(ItemName2){
 return loadItem2
 }
 
-
 function InitItem(ItemName3,Item3){
     var loadItem3 = LoadItem(ItemName3);
     if(loadItem3 === null){
@@ -19,7 +18,6 @@ function InitItem(ItemName3,Item3){
     }
 }
 
-
 function Grabber(target1,grabarray){
     if( target1 !== ""){
         if(NoDupes(target1,grabarray)){
@@ -29,10 +27,6 @@ function Grabber(target1,grabarray){
     }
 }
 
-
-
-
-
 function NoDupes(item4,Inputarray4){
     var bool = true
     if(Inputarray4.includes(item4)){
@@ -40,10 +34,6 @@ function NoDupes(item4,Inputarray4){
     }
     return bool
 }
-
-
-
-
 
 function DropdownFab(target,fabarray,targetnum){
     var Div = MakeElement($("<div>"),"w3-dropdown-content w3-bar-block w3-border","Div",i,null,null,null)
