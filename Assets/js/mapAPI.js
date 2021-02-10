@@ -6,6 +6,14 @@ function getLatAndLong(city, theId) {
     fetch(apiUrl)
         .then(function (response) {
         if (response.ok) {
+
+     
+            Grabber( $("#searchCityOne").val() , $("#searchCityTwo").val(), SearchedCities)
+
+            DropdownFab( $("#searchCityDropdown1"),SearchedCities,"One" )
+
+            DropdownFab( $("#searchCityDropdown2"),SearchedCities,"Two" )
+
             response.json()
             .then(function (data) {
                 lat = data.coord.lat;

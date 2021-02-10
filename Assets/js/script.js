@@ -1,18 +1,41 @@
 
 //event listener for both search boxes
+
+var SearchedCities = []
+SearchedCities = InitItem("StoredSearches",SearchedCities)
+
+$(document).ready(function() {
+
+    
+   
+    
+    DropdownFab( $("#searchCityDropdown1"),SearchedCities,"One" )
+
+    DropdownFab( $("#searchCityDropdown2"),SearchedCities,"Two" )
+
+
+});
+
+
+
+
 $("#search-btn").click(function(){
-    StoreItem("cityOne", $("#searchCityOne").val())
-    console.log($("#searchCityOne").val())
-    StoreItem("cityTwo", $("#searchCityTwo").val())
-    LoadItem("cityOne")
+ 
+
+
+
+
+
+
+
     errorModal()
     getFiveDay()
-    searchCities($("#searchCityOne").val(), $("#searchCityTwo").val());
-    
-    
-    // var cityOneName = $("#searchCityOne").val()
-    // var cityTwoName = $("#searchCityTwo").val()
 
-    // $(".cityNameOne").append(cityOneName);
-    // $(".cityNameTwo").append(cityTwoName);
+
+    
+    
+
+
+  
+
 })

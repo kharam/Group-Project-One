@@ -25,7 +25,7 @@
     <br>
     <!--two search bars and the submit button-->
     <div class="w3-container" style="text-align: center;">
-        <div class="w3-dropdown-hover">
+        <div class="w3-dropdown-hover" id="searchCityDropdown1">
             <!-- search bar -->
             <input type="w3-search" placeholder="Search City 1" id="searchCityOne">
             <!-- dropdown div to put history items -->
@@ -33,7 +33,7 @@
                 <!--style dropdown buttons like this <button class="w3-button w3-round-large w3-hover-aqua" style="width: 100%;"></button> -->
             </div>
         </div>
-        <div class="w3-dropdown-hover">
+        <div class="w3-dropdown-hover" id="searchCityDropdown2">
             <input type="w3-search" placeholder="Search City 2" id="searchCityTwo">
             <div class="w3-dropdown-content w3-bar-block w3-border">
                 <!-- <button class="w3-button w3-round-large w3-hover-aqua" style="width: 100%;"></button> -->
@@ -124,12 +124,19 @@
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
     integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
     crossorigin=""></script>
+
+    <script src="Assets/js/BasicElementRender.js"></script>
+    <script src="Assets/js/BasicLocalStorage.js"></script>
     <script src="Assets/js/costOfLiving.js"></script>
     <script src="Assets/js/mapAPI.js"></script>
     <script src="Assets/js/openWeatherAPI.js"></script>
     <script src="Assets/js/errorModal.js"></script>
+
+    <script src="Assets/js/BasicElementRender.js"></script>
+    <script src="Assets/js/BasicLocalStorage.js"></script>
+
     <script src="Assets/js/script.js"></script>
-    <script src="Assets/js/SearchStore.js"></script>
+
 
 </body>
 </html>
