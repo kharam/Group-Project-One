@@ -7,6 +7,7 @@
 
 function StoreItem(ItemName,Item){
     localStorage.setItem(ItemName, JSON.stringify(Item));
+    console.log(ItemName)
 }
 
 
