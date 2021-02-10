@@ -158,9 +158,6 @@ async function searchCities(city1, city2) {
         `;
     }
 
-    const cityName1 = city1.get("cityName");
-    const cityName2 = city2.get("cityName");
-
     const tbody1 = _makeTBODY(city1, commonKeys);
     const tbody2 = _makeTBODY(city2, commonKeys);
 
