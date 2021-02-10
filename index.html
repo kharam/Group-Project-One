@@ -189,9 +189,15 @@
         </div>
     </div>
     <br>
+    <!-- This is the error modal that pops if the any search input is left empty. -->
+    <div id="errorModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <p>Error: must include a valid city!</p>
+        </div>
+    </div>
     <br>
     <br>
-
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
     integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
     crossorigin=""></script>
@@ -199,6 +205,7 @@
     <script src="Assets/js/gasPrice.js"></script>
     <script src="Assets/js/mapAPI.js"></script>
     <script src="Assets/js/openWeatherAPI.js"></script>
+    <script src="Assets/js/errorModal.js"></script>
     <script src="Assets/js/script.js"></script>
     <script src="Assets/js/SearchStore.js"></script>
 

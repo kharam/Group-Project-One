@@ -15,3 +15,5 @@ The Relocator is an app for users that want to compare two cities. The app then 
 ## Credits
 
 W3 CSS Framework (https://www.w3schools.com/w3css/)
+
+W3 Schools - Modals (https://www.w3schools.com/howto/howto_css_modals.asp)
