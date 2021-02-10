@@ -14,9 +14,13 @@ function errorModal() {
         return
     }
     else return
+
 }
 
 function APIErrorModal() {
     $(modal).css("display","block")
     return
 }
+
+
+
