@@ -21,11 +21,11 @@ function getLatAndLong(city, theId) {
                 }).addTo(mymap);
             });
         } else {
-            alert('Error: ' + response.statusText);
+            APIErrorModal();
         }
         })
     .catch(function (error) {
-    alert('Unable to connect to the API.');
+    console.log('Unable to connect to the API.');
     });
 }
 $(document).ready(function() {
