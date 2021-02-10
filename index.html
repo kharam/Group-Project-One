@@ -10,17 +10,15 @@
     <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="Assets/css/customStyle.css">
-    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
-   integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
-   crossorigin=""></script>
-    <title>Document</title>
+    <title>The Relocator</title>
 </head>
 <body>
     <!--Navbar-->
     <div class="w3-bar w3-aqua">
         <div class="w3-container">
             <!-- main title -->
-            <h2>Whatever this thing is called...</h2>
+            <h1 style="text-align: center; margin: 5px; padding: 0px;">The Relocator</h1>
+            <p style="text-align: center; margin: 5px; padding: 0px;">Search two cities and find your forever home!</p>
         </div>
     </div>
     <br>
@@ -47,169 +45,168 @@
     </div>
     <br>
     <!-- div containing map and expenses -->
-    <div class="w3-container w3-cell-row">
-        <div class="w3-card w3-cell w3-half w3-mobile">
-            <header class="w3-container w3-blue-gray">
-                <h1>Distance Between Cities</h1>
-            </header>
-            <!-- put map in div below -->
-            <div class="w3-container w3-aqua" id="mapid"></div>
-            <script>
-                var lat;
-                var long;
-                function getLatAndLong(city) {
-                    var apiUrl = "https://api.openweathermap.org/data/2.5/weather?q=" + city +"&appid=873f7dda26b104045b059e355834d85b";
-                    fetch(apiUrl)
-                        .then(function (response) {
-                        if (response.ok) {
-                            response.json()
-                            .then(function (data) {
-                                lat = data.coord.lat;
-                                long = data.coord.lon;
-                                var mymap = L.map('mapid').setView([lat, long], 13);
-                                L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoiaGFuY29uZyIsImEiOiJja2tveGoxMXgwMXloMnNxa2oybm5pc25sIn0.hp-Jq2bPDmlRSluu-dXp-g', {
-                                    attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-                                    maxZoom: 18,
-                                    id: 'mapbox/streets-v11',
-                                    tileSize: 512,
-                                    zoomOffset: -1,
-                                    accessToken: 'your.mapbox.access.token'
-                                }).addTo(mymap);
-                            });
-                        } else {
-                            alert('Error: ' + response.statusText);
-                        }
-                        })
-                    .catch(function (error) {
-                    alert('Unable to connect to the API.');
+    <div class="w3-container">
+        <div class="w3-container w3-half ">
+            <div class="w3-card w3-cell w3-half w3-mobile">
+                <header class="w3-container w3-blue-gray">
+                    <h1>Location</h1>
+                </header>
+                <!-- put map in div below -->
+                <div class="w3-container w3-white" id="mapid"></div>
+                <script>
+                    var lat;
+                    var long;
+                    function getLatAndLong(city) {
+                        var apiUrl = "https://api.openweathermap.org/data/2.5/weather?q=" + city +"&appid=873f7dda26b104045b059e355834d85b";
+                        fetch(apiUrl)
+                            .then(function (response) {
+                            if (response.ok) {
+                                response.json()
+                                .then(function (data) {
+                                    lat = data.coord.lat;
+                                    long = data.coord.lon;
+                                    var mymap = L.map('mapid').setView([lat, long], 13);
+                                    L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoiaGFuY29uZyIsImEiOiJja2tveGoxMXgwMXloMnNxa2oybm5pc25sIn0.hp-Jq2bPDmlRSluu-dXp-g', {
+                                        attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+                                        maxZoom: 18,
+                                        id: 'mapbox/streets-v11',
+                                        tileSize: 512,
+                                        zoomOffset: -1,
+                                        accessToken: 'your.mapbox.access.token'
+                                    }).addTo(mymap);
+                                });
+                            } else {
+                                alert('Error: ' + response.statusText);
+                            }
+                            })
+                        .catch(function (error) {
+                        alert('Unable to connect to the API.');
+                        });
+                    }
+                    $(document).ready(function() {
+                        $("#search-btn").click(function() {
+                            getLatAndLong($("#searchCityOne").val());
+                            //getLatAndLong($("#searchCityTwo").val());
+                        });
                     });
-                }
-
-                $(document).ready(function() {
-                    $("#search-btn").click(function() {
-                        getLatAndLong($("#searchCityOne").val());
-                        //getLatAndLong($("#searchCityTwo").val());
-                    });
-                });
-            </script>
-        </div>
-        <!-- contains cost of living -->
-        <div class="w3-card w3-cell w3-half w3-mobile">
-            <header class="w3-container w3-blue-gray">
-                <h1>Cost of Living</h1>
-            </header>
-            <div class="w3-container w3-aqua">
-                <!-- cost of living city 1 -->
-                <div class="w3-half"></div>
-                <!-- cost of living city 2 -->
-                <div class="w3-half"></div>
+                </script>
+            </div>
+            <!-- contains cost of living -->
+            <div class="w3-card w3-cell w3-half w3-mobile">
+                <header class="w3-container w3-blue-gray">
+                    <h1>Cost of Living</h1>
+                </header>
+                <div class="w3-container w3-white">
+                    <!-- cost of living city 1 -->
+                    <div class="w3-half"></div>
+                    <!-- cost of living city 2 -->
+                    <div class="w3-half"></div>
+                </div>
             </div>
         </div>
-    </div>
-
-    <div class="w3-container w3-cell-row">
-        <div class="w3-card w3-cell w3-half w3-mobile">
-            <header class="w3-container w3-blue-gray">
-                <h1>Distance Between Cities</h1>
-            </header>
-            <!-- put map in div below -->
-            <div class="w3-container w3-aqua" id="mapidTwo"></div>
-            <script>
-                var lat;
-                var long;
-                function getLatAndLong(city) {
-                    var apiUrl = "https://api.openweathermap.org/data/2.5/weather?q=" + city +"&appid=873f7dda26b104045b059e355834d85b";
-                    fetch(apiUrl)
-                        .then(function (response) {
-                        if (response.ok) {
-                            response.json()
-                            .then(function (data) {
-                                lat = data.coord.lat;
-                                long = data.coord.lon;
-                                var mymap = L.map('mapid').setView([lat, long], 13);
-                                L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoiaGFuY29uZyIsImEiOiJja2tveGoxMXgwMXloMnNxa2oybm5pc25sIn0.hp-Jq2bPDmlRSluu-dXp-g', {
-                                    attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-                                    maxZoom: 18,
-                                    id: 'mapbox/streets-v11',
-                                    tileSize: 512,
-                                    zoomOffset: -1,
-                                    accessToken: 'your.mapbox.access.token'
-                                }).addTo(mymap);
-                            });
-                        } else {
-                            alert('Error: ' + response.statusText);
-                        }
-                        })
-                    .catch(function (error) {
-                    alert('Unable to connect to the API.');
+        <div class="w3-container w3-half ">
+            <div class="w3-card w3-cell w3-half w3-mobile">
+                <header class="w3-container w3-blue-gray">
+                    <h1>Location</h1>
+                </header>
+                <!-- put map in div below -->
+                <div class="w3-container w3-white" id="mapid"></div>
+                <script>
+                    var lat;
+                    var long;
+                    function getLatAndLong(city) {
+                        var apiUrl = "https://api.openweathermap.org/data/2.5/weather?q=" + city +"&appid=873f7dda26b104045b059e355834d85b";
+                        fetch(apiUrl)
+                            .then(function (response) {
+                            if (response.ok) {
+                                response.json()
+                                .then(function (data) {
+                                    lat = data.coord.lat;
+                                    long = data.coord.lon;
+                                    var mymap = L.map('mapid').setView([lat, long], 13);
+                                    L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoiaGFuY29uZyIsImEiOiJja2tveGoxMXgwMXloMnNxa2oybm5pc25sIn0.hp-Jq2bPDmlRSluu-dXp-g', {
+                                        attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+                                        maxZoom: 18,
+                                        id: 'mapbox/streets-v11',
+                                        tileSize: 512,
+                                        zoomOffset: -1,
+                                        accessToken: 'your.mapbox.access.token'
+                                    }).addTo(mymap);
+                                });
+                            } else {
+                                console.log('Error: ' + response.statusText);
+                            }
+                            })
+                        .catch(function (error) {
+                        console.log('Unable to connect to the API.');
+                        });
+                    }
+                    $(document).ready(function() {
+                        $("#search-btn").click(function() {
+                            getLatAndLong($("#searchCityOne").val());
+                            //getLatAndLong($("#searchCityTwo").val());
+                        });
                     });
-                }
-
-                $(document).ready(function() {
-                    $("#search-btn").click(function() {
-                        getLatAndLong($("#searchCityOne").val());
-                        //getLatAndLong($("#searchCityTwo").val());
-                    });
-                });
-            </script>
-        </div>
-        <!-- contains cost of living -->
-        <div class="w3-card w3-cell w3-half w3-mobile">
-            <header class="w3-container w3-blue-gray">
-                <h1>Cost of Living</h1>
-            </header>
-            <div class="w3-container w3-aqua">
-                <!-- cost of living city 1 -->
-                <div class="w3-half"></div>
-                <!-- cost of living city 2 -->
-                <div class="w3-half"></div>
+                </script>
+            </div>
+        
+            <!-- contains cost of living -->
+            <div class="w3-card w3-cell w3-half w3-mobile">
+                <header class="w3-container w3-blue-gray">
+                    <h1>Cost of Living</h1>
+                </header>
+                <div class="w3-container w3-white">
+                    <!-- cost of living city 1 -->
+                    <div class="w3-half"></div>
+                    <!-- cost of living city 2 -->
+                    <div class="w3-half"></div>
+                </div>
             </div>
         </div>
     </div>
     <br>
     <br>
     <!-- contains forcast -->
-    <div class="w3-container w3-cell-row">
-        <div class="w3-card w3-mobile">
-            <header class="w3-container w3-blue-gray">
+    <div class="w3-container w3-row w3-mobile test">
+        <div class="w3-card">
+            <header class="w3-container w3-blue-gray" id="forecastHeader">
                 <h1>Forecast</h1>
             </header>
             <!-- 5 day city 1 -->
-            <div class="w3-container w3-aqua" id="bobbyshmurda">
-                <h1 id="cityNameHeaderOne"></h1>
-                <div id="forecastOne"></div>
-            </div>
-            <!-- five day city 2 -->
-            <div class="w3-container w3-red" id="bobbyshmurda">
-                <h1 id="cityNameHeaderTwo"></h1>
-                <div id="forecastTwo"></div>
-            </div>
+            
+                <div class="w3-container">
+                    <h1 id="cityNameHeaderOne"></h1>
+                    <div class="w3-row w3-mobile" id="forecastOne"></div>
+                </div>
+            
+            
+                <!-- five day city 2 -->
+                <div class="w3-container">
+                    <h1 id="cityNameHeaderTwo"></h1>
+                    <div class="w3-row w3-mobile" id="forecastTwo"></div>
+                </div>
+            
+        </div>
+    </div>
+    <br>
+    <!-- This is the error modal that pops if the any search input is left empty. -->
+    <div id="errorModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <p>Error: must include a valid city!</p>
         </div>
     </div>
     <br>
     <br>
-    <div class="w3-container w3-cell-row">
-        <div class="w3-card w3-mobile">
-            <header class="w3-container w3-blue-gray">
-                <h1>Gas Price</h1>
-            </header>
-        </div>
-    </div>
-    <br>
-
-    <!-- function scripts go here -->   
-    
-    <script src="Assets/js/SearchStore.js"></script>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+    integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+    crossorigin=""></script>
+    <script src="Assets/js/costOfLiving.js"></script>
+    <script src="Assets/js/mapAPI.js"></script>
     <script src="Assets/js/openWeatherAPI.js"></script>
-
-    <!-- main code to bring it all together goes here -->
+    <script src="Assets/js/errorModal.js"></script>
     <script src="Assets/js/script.js"></script>
-
-
-
-
-
-
+    <script src="Assets/js/SearchStore.js"></script>
 
 </body>
 </html>
