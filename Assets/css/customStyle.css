@@ -105,3 +105,9 @@
                 text-align: center;
         }
 }
+
+@media screen and (max-width: 1110px){
+        h1 {
+                font-size: 15px;
+        }
+}
