@@ -7,6 +7,7 @@ $("#search-btn").click(function(){
     LoadItem("cityOne")
     errorModal()
     getFiveDay()
+    searchCities($("#searchCityOne").val(), $("#searchCityTwo").val());
     
     
     // var cityOneName = $("#searchCityOne").val()
