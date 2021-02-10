@@ -4,14 +4,15 @@ var mymap;
 function getLatAndLong(city, theId) {
     var apiUrl = "https://api.openweathermap.org/data/2.5/weather?q=" + city +"&appid=873f7dda26b104045b059e355834d85b";
     fetch(apiUrl)
-        .then(function (response) {
+        .then(function(response) {
         if (response.ok) {
 
-     
-            Grabber( $("#searchCityOne").val() , $("#searchCityTwo").val(), SearchedCities)
-
+            if(theId == "mapid"){
+                Grabber( $("#searchCityOne").val() , SearchedCities)
+            }else{
+                Grabber( $("#searchCityTwo").val() , SearchedCities)
+            }
             DropdownFab( $("#searchCityDropdown1"),SearchedCities,"One" )
-
             DropdownFab( $("#searchCityDropdown2"),SearchedCities,"Two" )
 
             response.json()
@@ -29,6 +30,7 @@ function getLatAndLong(city, theId) {
                 }).addTo(mymap);
             });
         } else {
+
             APIErrorModal();
         }
         })

@@ -10,7 +10,6 @@ $(document).ready(function() {
    
     
     DropdownFab( $("#searchCityDropdown1"),SearchedCities,"One" )
-
     DropdownFab( $("#searchCityDropdown2"),SearchedCities,"Two" )
 
 

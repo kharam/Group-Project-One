@@ -20,19 +20,10 @@ function InitItem(ItemName3,Item3){
 }
 
 
-function Grabber(target1,target2,grabarray){
-
-
+function Grabber(target1,grabarray){
     if( target1 !== ""){
         if(NoDupes(target1,grabarray)){
         grabarray[grabarray.length] = target1
-        SaveItem("StoredSearches",grabarray)
-        }
-    }
-  
-    if( target2 !== ""){
-        if(NoDupes(target2,grabarray)){
-        grabarray[grabarray.length] = target2
         SaveItem("StoredSearches",grabarray)
         }
     }
