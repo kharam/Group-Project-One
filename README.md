@@ -20,8 +20,18 @@ Some struggles we ran into involved getting the website mobile responsive. The c
 
 ## Screenshots
 
+![Screenshot One](Images/Screenshot1.JPG)
+![Screenshot Two](Images/Screenshot2.JPG)
+![Screenshot Three](Images/Screenshot3.JPG)
+
 ## Credits
 
 W3 CSS Framework (https://www.w3schools.com/w3css/)
 
 W3 Schools - Modals (https://www.w3schools.com/howto/howto_css_modals.asp)
+
+Open Weather API (https://openweathermap.org/api)
+
+Numbeo API (https://www.numbeo.com/api/doc.jsp)
+
+OpenStreetMap (https://www.openstreetmap.org/)
