@@ -14,7 +14,10 @@ function getFiveDay() {
     function getForecastData(city) {
         return fetch("https://api.openweathermap.org/data/2.5/forecast?q=" + city + "&units=imperial&apikey=09a0aab280840ec6d582b6d7445e4771")
             .then(res => {
+                if (res.ok){
+                printHeaders()
                 return res.json()
+                }
             })
     }
 
@@ -42,13 +45,13 @@ function getFiveDay() {
                     $(weatherTargetingArray[i]).append(forecastCard)
                     index += 8
                 }
-            }
+            }            
         })
         .catch((err) => {
             console.log('err:', err)
         })
     //Adds city names to headers.
-    printHeaders()
+    
 }
 
 //clear weather data function
