@@ -1,3 +1,7 @@
+::-webkit-scrollbar {
+        width: 10px;
+      }
+
 /* This is the class for the five day forecast cards that appear in the Open Weather API function. */
 .forecastCard {
         min-width: 150px;
@@ -55,6 +59,11 @@
         border: black;
         border-style: solid;
         border-width: 3px;
+}
+
+#cost-table-1, #cost-table-2{
+        height: 400px;
+        overflow: auto;
 }
 
 .modal-content {
