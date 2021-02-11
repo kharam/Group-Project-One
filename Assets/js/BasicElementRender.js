@@ -32,25 +32,3 @@
 
                 rerendertarget.append(renddiv);
         }
-
-
-
-
-
-
-
-
-                
-
-
-
-
-
-
-
-
-
-
-
-
-        }

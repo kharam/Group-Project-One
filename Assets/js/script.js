@@ -18,5 +18,6 @@ $("#search-btn").click(function(){
 
     errorModal()
     getFiveDay()
+    searchCities($("#searchCityOne").val(), $("#searchCityTwo").val());
 
 })
