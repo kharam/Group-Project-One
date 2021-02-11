@@ -1,5 +1,30 @@
 # Group-Project-One
 
+## Group Members
+* Mike Coletta - [MikeColetta](https://github.com/MikeColetta)
+
+* Jon Ekse - [Jrekse](https://github.com/Jrekse)
+
+* Corbin Garner - [CorbinGar](https://github.com/CorbinGar)
+
+* Haram Kwon - [kharam](https://github.com/kharam)
+
+* Hangcong Wang - [Herita7171](https://github.com/Herita7171)
+
+## Technologies Used
+
+* W3 CSS Framework
+
+* JQuery
+
+* Open Weather API 
+
+* Numbeo API 
+
+* OpenStreetMap API
+
+* MapBox
+
 ## Project Description
 
 The Relocator is an app for users that want to compare two cities. The app then shows their location, cost of living, and weather data. The Relocator also stores previous user searches for later use. 
@@ -10,7 +35,7 @@ We started thinking about how there really isn’t an effective way to compare c
 
 This led to us searching for APIs to fit our needs. Since we recently had experience using the Open Weather API, we chose that for weather. We then used Leaflet and the Google Maps API to format our map of each location. What started as just a gas price API search turned into us finding the API Numbeo that pulled a variety of statistics for cost of living.
 
-We chose to use the W3 CSS framework since we already like the readability of the W3 Schools documentation. Jon worked on setting up the initial HTML and CSS of the site. Corbin worked on local storage. Hancong worked on the map API and Leaflet. Haram looked for our cost of living API, found Numbeo, and set up the JavaScript for that. Mike worked on the Open Weather API, error modal, and organizing GitHub.
+We chose to use the W3 CSS framework since we already like the readability of the W3 Schools documentation. Jon worked on setting up the initial HTML and CSS of the site. Corbin worked on local storage. Hancong worked on the OpenStreetMap API. Haram looked for our cost of living API, found Numbeo, and set up the JavaScript for that. Mike worked on the Open Weather API, error modal, and organizing GitHub.
 
 Some struggles we ran into involved getting the website mobile responsive. The challenge came from getting the W3 Framework to work together with media queries. There was also a big problem with our Open Weather API loop. The loop was finishing before we managed to print the content. We had to set up a promise to finish rendering the content before the next loop started.
 
@@ -26,12 +51,4 @@ Some struggles we ran into involved getting the website mobile responsive. The c
 
 ## Credits
 
-W3 CSS Framework (https://www.w3schools.com/w3css/)
-
 W3 Schools - Modals (https://www.w3schools.com/howto/howto_css_modals.asp)
-
-Open Weather API (https://openweathermap.org/api)
-
-Numbeo API (https://www.numbeo.com/api/doc.jsp)
-
-OpenStreetMap (https://www.openstreetmap.org/)
